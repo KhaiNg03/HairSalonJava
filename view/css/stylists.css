@@ -1,0 +1,38 @@
+.stylists-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.stylists-section h1 {
+    margin-bottom: 10px;
+}
+
+.stylists-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stylist {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 30%; /* Chiếm 30% chiều rộng của mỗi nhà tạo mẫu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stylist img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

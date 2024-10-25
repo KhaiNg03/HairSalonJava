@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Era Hair Salon</title>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <!-- Header với video background -->
+    <header>
+        <!-- Video Background -->
+        <video autoplay muted loop id="bgVideo">
+            <source src="../videos/background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Nội dung hiển thị phía trên video -->
+        <div class="content">
+            <!-- Logo -->
+            <div class="top-bar">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Booksy Logo">
+                </div>
+                <div class="login-signup">
+                    <a href="#">Log In / Sign Up</a>
+                </div>
+            </div>
+
+            
+            
+
+            <!-- Phần chính với tiêu đề và thanh tìm kiếm -->
+            <div class="header-content">
+                <h1><span id="typing-text"></span></h1>
+                <p>Discover and book beauty & wellness professionals near you</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search services or businesses">
+                </div>
+            </div>
+
+            <!-- Menu điều hướng -->
+            <nav>
+                <ul id="main-menu">
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="stylists.html">Stylists</a></li>
+                    <li><a href="bookNow.html">Book now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="handbook.html">Handbook</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div>
+        <div>
+
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+              
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../images/Homeimg.png" alt="Los Angeles">
+                    <div class="carousel-caption">
+                        <!-- chèn chữ -->
+                        <h1 class="display-3">Los Angeles</h1>
+                        <p><abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+                        <p >We had such a great time in LA!</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../images/Homeimg2.png" alt="Chicago">
+                    <div class="carousel-caption">
+                        <h3>Los Angeles</h3>
+                        <p>We had such a great time in LA!</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../images/Homeimg3.png" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Los Angeles</h3>
+                        <p>We had such a great time in LA!</p>
+                      </div>
+                  </div>
+                </div>
+              
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              
+              </div>
+              <div>
+                <p class="intro-text">
+                    "Discover your true beauty at New Era Hair Salon – where every style is crafted to perfection, and confidence is our ultimate masterpiece."
+                    <br>
+                    <span class="quote">_Đông phương bất bại_</span>
+                </p>
+                
+              </div>
+        </div>
+
+
+</body>
+</html>
+<script>
+    // Danh sách các cụm từ cần hiển thị
+    const textList = [
+        "Be free",
+        "Be colorful",
+        "Be confident",
+        "Be brave",
+        "Be bold",
+        "Be yourself"
+    ];
+
+    let currentTextIndex = 0; // Vị trí của chuỗi trong danh sách
+    let currentCharIndex = 0; // Vị trí của ký tự trong chuỗi
+    const typingTextElement = document.getElementById("typing-text");
+
+    function typeText() {
+        // Lấy chuỗi hiện tại từ danh sách
+        const currentText = textList[currentTextIndex];
+        
+        // Hiển thị dần dần từng ký tự của chuỗi
+        typingTextElement.textContent = currentText.slice(0, currentCharIndex + 1);
+        
+        // Tăng chỉ số ký tự lên
+        currentCharIndex++;
+
+        // Nếu đã gõ hết chuỗi hiện tại
+        if (currentCharIndex === currentText.length) {
+            // Đợi một lúc trước khi chuyển sang từ tiếp theo
+            setTimeout(() => {
+                deleteText();
+            }, 2000); // Đợi 2 giây trước khi xóa
+        } else {
+            // Tiếp tục gõ
+            setTimeout(typeText, 50); // Gõ từng ký tự với khoảng cách 100ms
+        }
+    }
+
+    function deleteText() {
+        // Xóa toàn bộ chuỗi hiện tại
+        typingTextElement.textContent = "";
+
+        // Chuyển sang chuỗi tiếp theo trong danh sách
+        currentTextIndex = (currentTextIndex + 1) % textList.length;
+        currentCharIndex = 0;
+
+        typeText();
+    }
+
+    // Bắt đầu khi trang tải xong
+    window.onload = function() {
+        typeText();
+    };
+
+</script>
+
+

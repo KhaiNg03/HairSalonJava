@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background for better readability */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2d263c; /* Dark background for the header */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Increase header font size */
+}
+
+button {
+    background-color: #8613a9; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #bb01ff; /* Darker button color on hover */
+}
+
+.stylist-details {
+    display: flex;
+    justify-content: space-around; /* Space out the content */
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+    background-color: white; /* White background for the detail section */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px; /* Margin around the section */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.stylist-details:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.stylist-info {
+    display: flex; /* Flex layout for image and text */
+    max-width: 600px; /* Limit width for better appearance */
+    flex: 1 1 100%; /* Allow the info to take full width */
+}
+
+.stylist-info img {
+    width: 220px; /* Slightly increased width for the image */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 5px; /* Rounded corners for the image */
+    margin-right: 20px; /* Space between image and text */
+    border: 3px solid #a427ca; /* Add a border around the image */
+    padding: 5px; /* Space between image and border */
+    transition: transform 0.3s; /* Transition for image hover effect */
+}
+
+.stylist-info img:hover {
+    transform: scale(1.05); /* Slight scale effect on image hover */
+}
+
+.details {
+    max-width: 400px; /* Limit text width for better readability */
+}
+
+.details h2 {
+    font-size: 1.5em; /* Increase stylist name font size */
+}
+
+.details p {
+    font-size: 1.1em; /* Increase paragraph font size */
+    line-height: 1.5; /* Add line height for better readability */
+}
+
+.services {
+    margin-top: 20px;
+}
+
+.services h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em; /* Increase section heading font size */
+}
+
+.services ul {
+    list-style-type: disc; /* Use bullet points */
+    margin: 0;
+    padding-left: 20px; /* Indent list */
+    transition: transform 0.3s; /* Transition for list hover effect */
+}
+
+.services ul:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em; /* Adjust header font size for smaller screens */
+    }
+
+    .stylist-details {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .stylist-info {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center align image and text */
+        max-width: 100%; /* Allow full width */
+    }
+
+    .stylist-info img {
+        margin-right: 0; /* Remove margin for smaller screens */
+        margin-bottom: 20px; /* Add space below the image */
+        width: 100%; /* Make image responsive */
+        max-width: 220px; /* Limit max width for the image */
+    }
+
+    .details {
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .services {
+        text-align: center; /* Center services on smaller screens */
+    }
+
+    .services ul {
+        padding-left: 0; /* Remove indent for smaller screens */
+    }
+}

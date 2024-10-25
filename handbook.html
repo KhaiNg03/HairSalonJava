@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/popUp.css">
+    <link rel="stylesheet" href="css/handbook.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <script src="js/popup-manage.js"></script> -->
+</head>
+
+<!-- Pop-up Login Form -->
+<div id="login-popup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2>Login</h2>
+        <form action="" method="post">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="username" required>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="to-signup">Sign Up</a></p>
+    </div>
+</div>
+
+<!-- Pop-up Sign Up Form -->
+<div id="signup-popup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2>Sign Up</h2>
+        <form action="" method="post">
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" name="username" required>
+
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="email" required>
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" id="to-login">Login</a></p>
+    </div>
+</div>
+
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="home.html"><img src="../images/logo.png" alt="Logo"></a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search services or businesses">
+                <input type="text" placeholder="Where?">
+                <input type="text" placeholder="When?">
+            </div>
+
+            <!-- User Login Section -->
+            <div class="user-section">
+                <a href="#">Log In / Sign Up</a>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="aboutUs.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="stylists.html">Stylists</a>
+            <a href="bookNow.html">Book now</a>
+            <a href="contact.html">Contact</a>
+            <a href="handbook.html">Handbook</a>
+        </nav>
+    </header>
+
+    <section class="blog-section">
+        <div class="blog-container">
+            <div class="blog-item">
+                <img src="../images/chonkieutoc.webp" alt="Chọn kiểu tóc">
+                <h2 class="hover-effect">Những điều lưu bạn nên đọc để tìm kiểu tóc phù hợp</h2>
+                <p>Những lưu ý khi chọn kiểu tóc phù hợp cho từng khuôn mặt và phong cách.</p>
+                <a href="kieutoc_hair.html">Xem thêm</a>
+            </div>
+    
+            <div class="blog-item">
+                <img src="../images/cach-say-toc.jpg" alt="Cách sấy tóc">
+                <h2 class="hover-effect">Sấy tóc như thế nào thì đúng cách ?</h2>
+                <p>Hướng dẫn sấy tóc để luôn mềm mại và khỏe mạnh.</p>
+                <a href="saytoc_hair.html">Xem thêm</a>
+            </div>
+    
+            <div class="blog-item">
+                <img src="../images/meochamsoctoc.png" alt="Chăm sóc tóc">
+                <h2 class="hover-effect">Mẹo chăm sóc và dưỡng tóc hàng ngày</h2>
+                <p>Cách chăm sóc tóc hàng ngày để giữ cho tóc luôn khỏe đẹp.</p>
+                <a href="meochamsoctoc_hair.html">Xem thêm</a>
+            </div>
+    
+            <div class="blog-item">
+                <img src="../images/mautoc.png" alt="màu tóc">
+                <h2 class="hover-effect">Những màu nhuộm đang hot trend hiện nay</h2>
+                <p>Hiện nay những màu tóc nâu đen, nâu khói v.v đang chiếm top cao trên bxh.</p>
+                <a href="maunhuom_hair.html">Xem thêm</a>
+            </div>
+        </div>
+    </section>
+    
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="logo">
+                    <span>NewEra.</span>
+                </div>
+                <p>
+                    With a team of professional and experienced hairstylists who are always up to date with the latest fashion trends, we are confident in delivering the perfect hairstyle that suits your unique personality and style.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Testimonial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Smooth Shave</a></li>
+                        <li><a href="#">Beard Triming</a></li>
+                        <li><a href="#">Haircut Styles</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>This hair salon was founded and completed in 2024 <span>❤️</span> by Gruop 5 student UTH</p>
+        </div>
+        
+    </footer>
+</body>
+</html>
+
+<script src="js/popup-manage.js"></script>

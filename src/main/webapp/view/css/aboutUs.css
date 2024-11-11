@@ -1,0 +1,45 @@
+
+/* About Us Section */
+.about-detail-section {
+    padding: 9px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+.about-detail-section h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+.about-detail-section p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.about-detail-section .about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Section */
+.about-detail-section .gallery-item {
+    margin-top: 40px;
+    text-align: center;
+}
+.about-detail-section .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.about-detail-section .gallery-item:hover img {
+    transform: scale(1.05);
+}
+.about-detail-section .gallery-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}

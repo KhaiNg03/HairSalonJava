@@ -1,0 +1,69 @@
+.popup-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Nền tối với độ trong suốt */
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.popup-content {
+    max-width: 400px; /* Kích thước tối đa cho popup */
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    background-color: white; /* Nền trắng cho popup */
+    color: black; /* Chữ đen cho popup */
+}
+
+.close-popup {
+    position: absolute;
+    top: -15px; /* Đẩy nút lên một chút so với viền trên */
+    right: -15px; /* Đẩy nút ra ngoài một chút so với viền phải */
+    width: 40px; /* Kích thước nút */
+    height: 40px; /* Kích thước nút */
+    background-color: black; /* Nền nút đóng màu đen */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Bỏ viền */
+    border-radius: 50%; /* Hình tròn */
+    cursor: pointer; /* Hiển thị con trỏ khi hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Kích thước chữ lớn hơn */
+    z-index: 1100; /* Đảm bảo nút ở trên cùng */
+}
+
+.close-popup:hover {
+    background-color: #444; /* Màu nền khi hover */
+}
+
+
+.btn-dark {
+    background-color: black; /* Nền đen cho nút */
+    color: white; /* Chữ trắng cho nút */
+    border: none; /* Bỏ viền */
+    padding: 10px; /* Padding cho nút */
+}
+
+.btn-dark:hover {
+    background-color: #333; /* Màu khi hover */
+}
+
+/* Form Input Styles */
+.form-control {
+    width: 100%; /* Chiều rộng đầy đủ */
+    padding: 10px; /* Padding cho ô nhập */
+    margin-bottom: 10px; /* Khoảng cách giữa các ô nhập */
+    border: 1px solid #ccc; /* Viền nhạt */
+    border-radius: 5px; /* Bo góc */
+}
+
+.form-control:focus {
+    border-color: black; /* Đổi màu viền khi ô nhập được chọn */
+    outline: none; /* Bỏ viền ngoài */
+}

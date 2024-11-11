@@ -1,0 +1,81 @@
+ Bai1:
+-- procedure sp_Proc1
+CREATE PROCEDURE sp_Proc1
+    @soluong INT OUTPUT
+AS
+BEGIN
+    DECLARE @currentDate DATE = GETDATE();
+
+    SELECT @soluong = COUNT(*)
+    FROM NHANVIEN
+    WHERE (PHAI = N'Nam' AND DATEDIFF(YEAR, NGSINH, @currentDate) >= 62)
+       OR (PHAI = N'Nữ' AND DATEDIFF(YEAR, NGSINH, @currentDate) >= 60)
+END
+
+-- procedure sp_Proc2
+CREATE PROCEDURE sp_Proc2
+    @tenphongban NVARCHAR(20),
+    @soluong INT OUTPUT
+AS
+BEGIN
+    SELECT @soluong = COUNT(*)
+    FROM THANNHAN TN
+    JOIN NHANVIEN NV ON TN.MA_NVIEN = NV.MANV
+    JOIN PHONGBAN PB ON NV.MANV = PB.TRPHG
+    WHERE PB.TENPHG = @tenphongban
+END
+
+Bai2.
+--Trigger Tuoi18
+CREATE TRIGGER Tuoi18
+ON NHANVIEN
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    -- Bắt đầu transaction
+    BEGIN TRANSACTION;
+
+    -- Kiểm tra điều kiện tuổi >= 18
+    IF EXISTS (
+        SELECT 1
+        FROM INSERTED
+        WHERE DATEDIFF(YEAR, NGSINH, GETDATE()) < 18
+    )
+    BEGIN
+        -- Nếu có nhân viên dưới 18 tuổi, rollback transaction và return
+        ROLLBACK TRANSACTION;
+        RAISERROR ('Nhân viên phải từ 18 tuổi trở lên.', 16, 1);
+        RETURN;
+    END
+
+    -- Commit transaction nếu điều kiện hợp lệ
+    COMMIT TRANSACTION;
+END
+
+-- Trigger Thoigian35_55
+CREATE TRIGGER Thoigian35_55
+ON PHANCONG
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    -- Bắt đầu transaction
+    BEGIN TRANSACTION;
+
+    -- Kiểm tra tổng thời gian làm việc của mỗi nhân viên
+    IF EXISTS (
+        SELECT MA_NVIEN
+        FROM PHANCONG
+        GROUP BY MA_NVIEN
+        HAVING SUM(THOIGIAN) < 35 OR SUM(THOIGIAN) > 55
+    )
+    BEGIN
+        -- Nếu tổng giờ không hợp lệ, rollback transaction và return
+        ROLLBACK TRANSACTION;
+        RAISERROR ('Nhân viên phải làm việc từ 35 đến 55 giờ mỗi tuần.', 16, 1);
+        RETURN;
+    END
+
+    -- Commit transaction nếu điều kiện hợp lệ
+    COMMIT TRANSACTION;
+END
+

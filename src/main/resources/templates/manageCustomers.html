@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Customers</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+
+<header class="text-center">
+  <h2>Admin Panel - Manage Customers</h2>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar Menu -->
+    <aside class="col-md-2 sidebar">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageUsers}">Manage Users</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageCustomers}">Manage Customers</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageStylists}">Manage Stylists</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageServices}">Manage Services</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageAppointments}">Manage Appointments</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageOrders}">Manage Orders</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/manageFeedbacks}">Manage Feedbacks</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="col-md-10 p-4">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2>Manage Customers</h2>
+        </div>
+
+        <div class="text-end mb-3">
+          <a class="btn btn-primary" th:href="@{/manageCustomers/new}">Add New Customer</a>
+        </div>
+
+        <div th:if="${message}" class="alert alert-success text-center">
+          [[${message}]]
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>User ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>  <!-- Đổi vị trí Address lên trước Phone -->
+              <th>Phone</th>    <!-- Phone ở cuối -->
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer : ${customers}">
+              <td th:text="${customer.id}">1</td>
+              <td th:text="${customer.user.id}">User ID</td>
+              <td th:text="${customer.user.username}">Username</td>
+              <td th:text="${customer.user.email}">Email</td>
+              <td th:text="${customer.address}">Address</td>  <!-- Đổi vị trí Address lên trước Phone -->
+              <td th:text="${customer.phone}">Phone</td>      <!-- Phone ở cuối -->
+              <td>
+                <!-- Edit/Delete buttons -->
+                <a class="btn btn-sm btn-outline-info" th:href="@{/manageCustomers/edit/{id}(id=${customer.id})}">Edit</a>
+                <a class="btn btn-sm btn-outline-danger" th:href="@{/manageCustomers/delete/{id}(id=${customer.id})}">Delete</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="text-center">
+  <p>&copy; 2024 Hair Salon. All rights reserved.</p>
+</footer>
+
+<script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

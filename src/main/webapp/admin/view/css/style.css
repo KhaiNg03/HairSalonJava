@@ -1,0 +1,117 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding-bottom: 60px; /* Space for fixed footer */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Link Styling */
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85em;
+    padding: 10px 0;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #ccc;
+}
+
+/* Divider Style */
+.sidebar ul li:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin: 8px 0;
+    height: 1px;
+    background: linear-gradient(to right, #444, #888, #444);
+    opacity: 0.6;
+}
+
+/* Main Content Styling */
+.content {
+    width: calc(100% - 1px); /* Adjust width based on sidebar */
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 550px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%; /* Expand sidebar for mobile */
+        padding: 10px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    /* Sidebar Menu in Two Columns */
+    .sidebar ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        gap: 10px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0; /* Adjust spacing */
+    }
+}

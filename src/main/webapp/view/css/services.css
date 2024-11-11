@@ -1,0 +1,261 @@
+.sidebar {
+    width:170px;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    height: 100vh;
+    background-color: #2f2f2f;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#dbdbdb;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 25px;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+.container-content{
+    display:flex;
+}
+
+.container-content .content {
+    flex: 1; /* Tự động chiếm phần còn lại của màn hình */
+    padding: 30px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(2000px); /* Xuất phát từ bên ngoài */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Vị trí cuối cùng là bên trong */
+    }
+}
+
+.service-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+    opacity: 0; /* Bắt đầu ở trạng thái ẩn */
+    animation: slideIn 1s ease forwards; /* Hiệu ứng trượt vào */
+}
+
+.service-section:nth-child(even) {
+    flex-direction: row-reverse;
+    animation: slideIn 1.5s ease forwards;
+}
+
+.service-section img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    object-fit: cover;
+    margin-right: 20px;
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển ảnh */
+}
+
+.service-section:hover img {
+    transform: scale(1.10); /* Phóng to ảnh khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0.5, 0.5, 0.5); /* Bóng cho hộp mô tả */
+}
+
+.service-section:nth-child(even) img {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.service-description {
+    flex: 1;
+    padding: 20px;
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng cho hộp mô tả */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+.service-description:hover {
+    background-color: #a6a5a5; /* Thay đổi màu nền khi hover */
+    font-size: 17px;
+}
+
+.service-description h3 {
+    margin-bottom: 15px;
+}
+
+.service-description p {
+    line-height: 1.6;
+}
+
+
+.service-info {
+    opacity: 0;
+    transform: translateY(1500px);
+    transition: all 0.7s ease-in-out;
+
+}
+
+.service-info.show {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 20px;
+    border: 1px solid #ddd; /* Đường viền xung quanh phần chi tiết */
+    border-radius: 8px; /* Bo góc */
+    margin-top: 20px; /* Khoảng cách với các phần khác */
+    background-color: #f9f9f9; /* Màu nền nhạt */
+
+
+}
+.service-info h4 {
+    font-size: 24px; /* Kích thước chữ tiêu đề */
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    color: #333; /* Màu chữ */
+}
+
+.additional-info {
+    margin-top: 40px; /* Khoảng cách trên phần thông tin thêm */
+    padding: 15px;
+    background-color: #e7f3fe; /* Màu nền cho phần ưu đãi */
+    border-left: 5px solid #2196F3; /* Đường viền bên trái màu xanh */
+}
+
+.additional-info h4 {
+    font-size: 20px; /* Kích thước chữ tiêu đề cho phần thông tin thêm */
+    color: #1a73e8; /* Màu chữ */
+}
+
+.additional-info ul {
+    list-style-type: disc; /* Kiểu danh sách chấm */
+    margin-left: 20px; /* Lề trái cho danh sách */
+}
+
+
+
+
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-table th,
+.price-table td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.price-table th {
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+}
+
+.price-table td {
+    background-color: #f9f9f9;
+}
+
+.price-table tr:nth-child(even) {
+    background-color: #eaeaea;
+    font-size: 17px;
+}
+
+tr:hover td {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+    transform: scale(1.05); /* Tăng kích thước nhẹ khi hover */
+}
+
+th:hover {
+    background-color: #444444; /* Màu nền cho tiêu đề khi hover */
+}
+
+.service-image {
+    text-align: center; /* Căn giữa hình ảnh */
+    margin: 20px 0; /* Khoảng cách trên và dưới hình ảnh */
+    width:100%;
+}
+
+.service-image img {
+    width: 100%; /* Đảm bảo hình ảnh không vượt quá độ rộng của phần chứa */
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ */
+    border-radius: 8px; /* Bo góc cho hình ảnh */
+    height:400px;
+}
+
+.box-wrapper{
+    margin-top:40px;
+}
+
+.booking-button {
+    text-align: center; /* Căn giữa nút */
+    margin-top: 20px; /* Khoảng cách trên nút */
+}
+
+.btn-booking {
+    display: inline-block; /* Hiển thị dạng inline-block để có thể tùy chỉnh kích thước */
+    padding: 10px 20px; /* Khoảng cách trong nút */
+    background-color: #000000; /* Màu nền của nút */
+    color: #fff; /* Màu chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 5px; /* Bo góc cho nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+.btn-booking:hover {
+    background-color: #595858; /* Màu nền khi hover */
+    color:white;
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .search-container {
+        margin-top: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .service-section {
+        flex-direction: column;
+    }
+
+
+    .service-section img {
+        margin-bottom: 20px;
+    }
+}
